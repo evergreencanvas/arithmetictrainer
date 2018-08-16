@@ -1,0 +1,31 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=3
+
+[application]
+
+config/name="ArithmeticTrainer"
+run/main_scene="res://MainScene.tscn"
+boot_splash/fullsize=false
+config/icon="res://icon.png"
+
+[display]
+
+window/size/width=2560
+window/size/height=1440
+window/size/test_width=1680
+window/size/test_height=900
+window/stretch/mode="viewport"
+window/stretch/aspect="keep"
+window/stretch/shrink="1"
+
+[rendering]
+
+quality/2d/use_pixel_snap=true
+environment/default_environment="res://default_env.tres"

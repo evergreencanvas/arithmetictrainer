@@ -1,0 +1,539 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://MathDisplay.gd" type="Script" id=1]
+[ext_resource path="res://resources/trench100free.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+
+size = 250
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 2 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=2]
+
+size = 150
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 2 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[node name="MathDisplay" type="Node" index="0"]
+
+script = ExtResource( 1 )
+_sections_unfolded = [ "custom_constants" ]
+
+[node name="Timer" type="Timer" parent="." index="0"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 2560.0
+margin_bottom = 251.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+
+[node name="WrongCount" type="Label" parent="VBoxContainer/HBoxContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1278.0
+margin_bottom = 251.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.914063, 0.471313, 0.471313, 1 )
+text = "0"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Material", "Size Flags", "Visibility", "custom_colors", "custom_fonts", "custom_styles" ]
+
+[node name="RightCount" type="Label" parent="VBoxContainer/HBoxContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1282.0
+margin_right = 2560.0
+margin_bottom = 251.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 1, 0.109375, 1 )
+text = "0"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Material", "Size Flags", "Visibility", "custom_colors", "custom_fonts" ]
+
+[node name="CalcDisplay" type="MarginContainer" parent="VBoxContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 255.0
+margin_right = 2560.0
+margin_bottom = 1440.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 20
+custom_constants/margin_top = 0
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+_sections_unfolded = [ "Size Flags", "custom_constants" ]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/CalcDisplay" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 20.0
+margin_right = 2540.0
+margin_bottom = 1165.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+_sections_unfolded = [ "Size Flags" ]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/CalcDisplay/VBoxContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 934.0
+margin_right = 1586.0
+margin_bottom = 251.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 4
+size_flags_vertical = 1
+alignment = 0
+_sections_unfolded = [ "Size Flags" ]
+
+[node name="ProblemLabel" type="Label" parent="VBoxContainer/CalcDisplay/VBoxContainer/HBoxContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 533.0
+margin_bottom = 251.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+text = "5 + 5"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Material", "Size Flags", "Visibility", "custom_fonts" ]
+
+[node name="Label2" type="Label" parent="VBoxContainer/CalcDisplay/VBoxContainer/HBoxContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 537.0
+margin_right = 648.0
+margin_bottom = 251.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+text = "="
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Material", "Size Flags", "Visibility", "custom_fonts" ]
+
+[node name="AnswerLabel" type="Label" parent="VBoxContainer/CalcDisplay/VBoxContainer/HBoxContainer" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 652.0
+margin_right = 652.0
+margin_bottom = 251.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Material", "Visibility", "custom_fonts" ]
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/CalcDisplay/VBoxContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 255.0
+margin_right = 2520.0
+margin_bottom = 1165.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/vseparation = 1
+columns = 5
+_sections_unfolded = [ "Anchor", "Size Flags", "custom_constants" ]
+
+[node name="Button1" type="Button" parent="VBoxContainer/CalcDisplay/VBoxContainer/GridContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 500.0
+margin_bottom = 454.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 2 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "1"
+flat = true
+align = 1
+_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Material", "Size Flags", "custom_constants", "custom_fonts" ]
+
+[node name="Button2" type="Button" parent="VBoxContainer/CalcDisplay/VBoxContainer/GridContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 504.0
+margin_right = 1004.0
+margin_bottom = 454.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 2 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "2"
+flat = true
+align = 1
+_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Material", "Size Flags", "custom_constants", "custom_fonts" ]
+
+[node name="Button3" type="Button" parent="VBoxContainer/CalcDisplay/VBoxContainer/GridContainer" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1008.0
+margin_right = 1508.0
+margin_bottom = 454.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 2 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "3"
+flat = true
+align = 1
+_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Material", "Size Flags", "custom_constants", "custom_fonts" ]
+
+[node name="Button4" type="Button" parent="VBoxContainer/CalcDisplay/VBoxContainer/GridContainer" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1512.0
+margin_right = 2012.0
+margin_bottom = 454.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 2 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "4"
+flat = true
+align = 1
+_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Material", "Size Flags", "custom_constants", "custom_fonts" ]
+
+[node name="Button5" type="Button" parent="VBoxContainer/CalcDisplay/VBoxContainer/GridContainer" index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 2016.0
+margin_right = 2516.0
+margin_bottom = 454.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 2 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "5"
+flat = true
+align = 1
+_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Material", "Size Flags", "custom_constants", "custom_fonts" ]
+
+[node name="Button6" type="Button" parent="VBoxContainer/CalcDisplay/VBoxContainer/GridContainer" index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 455.0
+margin_right = 500.0
+margin_bottom = 909.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 2 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "6"
+flat = true
+align = 1
+_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Material", "Size Flags", "custom_constants", "custom_fonts" ]
+
+[node name="Button7" type="Button" parent="VBoxContainer/CalcDisplay/VBoxContainer/GridContainer" index="6"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 504.0
+margin_top = 455.0
+margin_right = 1004.0
+margin_bottom = 909.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 2 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "7"
+flat = true
+align = 1
+_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Material", "Size Flags", "custom_constants", "custom_fonts" ]
+
+[node name="Button8" type="Button" parent="VBoxContainer/CalcDisplay/VBoxContainer/GridContainer" index="7"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1008.0
+margin_top = 455.0
+margin_right = 1508.0
+margin_bottom = 909.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 2 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "8"
+flat = true
+align = 1
+_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Material", "Size Flags", "custom_constants", "custom_fonts" ]
+
+[node name="Button9" type="Button" parent="VBoxContainer/CalcDisplay/VBoxContainer/GridContainer" index="8"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1512.0
+margin_top = 455.0
+margin_right = 2012.0
+margin_bottom = 909.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 2 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "9"
+flat = true
+align = 1
+_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Material", "Size Flags", "custom_constants", "custom_fonts" ]
+
+[node name="Button0" type="Button" parent="VBoxContainer/CalcDisplay/VBoxContainer/GridContainer" index="9"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 2016.0
+margin_top = 455.0
+margin_right = 2516.0
+margin_bottom = 909.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 2 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "10"
+flat = true
+align = 1
+_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Material", "Size Flags", "custom_constants", "custom_fonts" ]
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+
+[connection signal="button_down" from="VBoxContainer/CalcDisplay/VBoxContainer/GridContainer/Button1" to="." method="_on_Button1_button_down"]
+
+[connection signal="button_down" from="VBoxContainer/CalcDisplay/VBoxContainer/GridContainer/Button2" to="." method="_on_Button2_button_down"]
+
+[connection signal="button_down" from="VBoxContainer/CalcDisplay/VBoxContainer/GridContainer/Button3" to="." method="_on_Button3_button_down"]
+
+[connection signal="button_down" from="VBoxContainer/CalcDisplay/VBoxContainer/GridContainer/Button4" to="." method="_on_Button4_button_down"]
+
+[connection signal="button_down" from="VBoxContainer/CalcDisplay/VBoxContainer/GridContainer/Button5" to="." method="_on_Button5_button_down"]
+
+[connection signal="button_down" from="VBoxContainer/CalcDisplay/VBoxContainer/GridContainer/Button6" to="." method="_on_Button6_button_down"]
+
+[connection signal="button_down" from="VBoxContainer/CalcDisplay/VBoxContainer/GridContainer/Button7" to="." method="_on_Button7_button_down"]
+
+[connection signal="button_down" from="VBoxContainer/CalcDisplay/VBoxContainer/GridContainer/Button8" to="." method="_on_Button8_button_down"]
+
+[connection signal="button_down" from="VBoxContainer/CalcDisplay/VBoxContainer/GridContainer/Button9" to="." method="_on_Button9_button_down"]
+
+[connection signal="button_down" from="VBoxContainer/CalcDisplay/VBoxContainer/GridContainer/Button0" to="." method="_on_Button0_button_down"]
+
+
