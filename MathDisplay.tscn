@@ -19,7 +19,7 @@ use_filter = false
 font_data = ExtResource( 2 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="MathDisplay" type="Node" index="0"]
+[node name="MathDisplay" type="Node"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "custom_constants" ]
@@ -300,7 +300,7 @@ group = null
 text = "2"
 flat = true
 align = 1
-_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Material", "Size Flags", "custom_constants", "custom_fonts" ]
+_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Material", "Rect", "Size Flags", "custom_constants", "custom_fonts" ]
 
 [node name="Button3" type="Button" parent="VBoxContainer/CalcDisplay/VBoxContainer/GridContainer" index="2"]
 

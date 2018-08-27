@@ -22,7 +22,7 @@ signal nextStage
 
 func _ready():
 	randomize()
-	set_stage(2)
+	set_stage(0)
 	get_new_problem()
 	
 func set_stage(stageNumber):
@@ -91,7 +91,7 @@ func get_new_problem():
 	
 	
 func get_answer(x, y):
-	var ans = 0
+	var ans
 	match operationIndex:
 		0:
 			ans = x + y
@@ -112,8 +112,10 @@ func check_answer():
 		var inputInt = int(input)
 		if answer == inputInt:
 			countRight += 1
+			emit_signal('correctAnswer')
 		else:
 			countWrong += 1
+			emit_signal('wrongAnswer')
 		update_count_labels()
 		inputAllowed = false
 		$Timer.start()

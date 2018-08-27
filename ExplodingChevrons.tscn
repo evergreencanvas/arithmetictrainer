@@ -1,0 +1,178 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://ExplodingChevrons.gd" type="Script" id=1]
+[ext_resource path="res://ChevronPolygon.tscn" type="PackedScene" id=2]
+
+[sub_resource type="Gradient" id=1]
+
+offsets = PoolRealArray( 0.00738007, 0.675277, 1 )
+colors = PoolColorArray( 0.597656, 1, 0.660522, 1, 0, 0, 0, 0.585608, 0, 0, 0, 0 )
+
+[sub_resource type="GradientTexture" id=2]
+
+flags = 4
+gradient = SubResource( 1 )
+width = 2048
+
+[sub_resource type="ParticlesMaterial" id=3]
+
+render_priority = 0
+trail_divisor = 1
+emission_shape = 0
+flag_align_y = false
+flag_rotate_y = false
+flag_disable_z = true
+spread = 180.0
+flatness = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 800.0
+initial_velocity_random = 0.0
+angular_velocity = 360.0
+angular_velocity_random = 0.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 3.05
+linear_accel_random = 0.0
+radial_accel = 9.76
+radial_accel_random = 0.47
+tangential_accel = 0.0
+tangential_accel_random = 0.0
+damping = 0.0
+damping_random = 0.0
+angle = 0.0
+angle_random = 0.0
+scale = 35.48
+scale_random = 0.5
+color_ramp = SubResource( 2 )
+hue_variation = 0.0
+hue_variation_random = 0.0
+anim_speed = 0.0
+anim_speed_random = 0.0
+anim_offset = 0.0
+anim_offset_random = 0.0
+anim_loop = false
+_sections_unfolded = [ "Angle", "Angular Velocity", "Color", "Damping", "Emission Shape", "Flags", "Gravity", "Initial Velocity", "Linear Accel", "Orbit Velocity", "Radial Accel", "Scale", "Spread", "Tangential Accel", "Trail" ]
+
+[sub_resource type="Animation" id=4]
+
+resource_name = "explode"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("ChevronPolygon1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -150, -370 ), Vector2( -3500, -370 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ChevronPolygon2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 370, -150 ), Vector2( 370, -3500 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("ChevronPolygon3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 150, 365.831 ), Vector2( 3500, 365.831 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("ChevronPolygon4:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -365.795, 150 ), Vector2( -365.795, 3500 ) ]
+}
+
+[node name="ExplodingChevrons" type="Node2D" index="0"]
+
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+chevronColor = Color( 0.14505, 0.378906, 0.154185, 1 )
+
+[node name="Particles2D" type="Particles2D" parent="." index="0"]
+
+emitting = false
+amount = 500
+lifetime = 1.0
+one_shot = true
+preprocess = 0.0
+speed_scale = 2.0
+explosiveness = 0.0
+randomness = 0.57
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = true
+draw_order = 0
+process_material = SubResource( 3 )
+texture = null
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Process Material", "Time", "Transform" ]
+
+[node name="ChevronPolygon1" parent="." index="1" instance=ExtResource( 2 )]
+
+position = Vector2( -150, -370 )
+polygon = PoolVector2Array( 240, 130, 160, 130, 70, 370, 125.067, 516.845, 160, 610, 240, 610, 150, 370 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="ChevronPolygon2" parent="." index="2" instance=ExtResource( 2 )]
+
+position = Vector2( 370, -150 )
+rotation = 1.5708
+polygon = PoolVector2Array( 240, 130, 160, 130, 70, 370, 125.067, 516.845, 160, 610, 240, 610, 150, 370 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="ChevronPolygon3" parent="." index="3" instance=ExtResource( 2 )]
+
+position = Vector2( 150, 365.831 )
+rotation = 3.14159
+polygon = PoolVector2Array( 240, 130, 160, 130, 70, 370, 125.067, 516.845, 160, 610, 240, 610, 150, 370 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="ChevronPolygon4" parent="." index="4" instance=ExtResource( 2 )]
+
+position = Vector2( -365.795, 150 )
+rotation = 4.71239
+polygon = PoolVector2Array( 240, 130, 160, 130, 70, 370, 125.067, 516.845, 160, 610, 240, 610, 150, 370 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="5"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/explode = SubResource( 4 )
+blend_times = [  ]
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+
+
