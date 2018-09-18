@@ -112,10 +112,12 @@ func check_answer():
 		var inputInt = int(input)
 		if answer == inputInt:
 			countRight += 1
-			emit_signal('correctAnswer')
+			# emit_signal('correctAnswer')
+			on_correctAnswer()
 		else:
 			countWrong += 1
-			emit_signal('wrongAnswer')
+			# emit_signal('wrongAnswer')
+			on_wrongAnswer()
 		update_count_labels()
 		inputAllowed = false
 		$Timer.start()
@@ -127,6 +129,17 @@ func give_input(numberChar):
 	
 		check_answer()
 	
+func on_correctAnswer():
+	$AnimationPlayer.play("flashGreen")
+	var point = $Node2D.get_global_mouse_position()
+	var explosionScene = load("res://effects/ExplodingChevrons.tscn")
+	var node = explosionScene.instance()
+	node.chevronColor = Color(0,1,0,1)
+	node.transform.origin = point
+	add_child(node)
+
+func on_wrongAnswer():
+	$AnimationPlayer.play("flashRed")
 
 func update_count_labels():
 	$VBoxContainer/HBoxContainer/RightCount.text = str(countRight)
